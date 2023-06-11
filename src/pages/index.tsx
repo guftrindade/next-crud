@@ -1,4 +1,16 @@
+import Layout from "@/components/Layout";
+import Tabela from "@/components/Tabela";
+import Cliente from "@/core/Cliente";
+
 export default function Home() {
+
+  const clientes = [
+    new Cliente('Ana', 24,'1'),
+    new Cliente('Bia', 32,'2'),
+    new Cliente('Carlos', 16,'3'),
+    new Cliente('Marta', 19,'4'),
+    new Cliente('Carol', 45,'5'),
+  ]
   return (
     <div className={`
       flex 
@@ -9,7 +21,9 @@ export default function Home() {
       from-blue-500
       to-purple-500
       text-white`}>
-      <h1>App</h1>
+      <Layout titulo="CRUD com Nextjs e Reactjs">
+        <Tabela clientes></Tabela>
+      </Layout>
     </div>
   )
 }
